@@ -1,10 +1,15 @@
+import threading
+import time
 from tkinter import *
 class CommanderWindow:
     def __init__(self, master):
         self.master = master
-        master.title("Calculator")
+        master.title("Norton Commander")
 
-        self.label = Label(master, text="Total Size: 3.4M")
+        self.label_text = StringVar()
+        self.label_text.set("Total Size: 3.4M")
+        self.label = Label(master,
+                           textvariable = self.label_text)
         self.listbox1 = Listbox(master)
         self.listbox1.insert(1, "[..]")
         self.listbox1.insert(2, "python")
@@ -24,13 +29,18 @@ class CommanderWindow:
                           rowspan=3)
         self.label.grid(row=4, column=0, sticky=W)
 
-
+    def foo(self):
+        time.sleep(1)
+        self.label_text.set("aaaaaa")
     def add(self):
         pass
 
 root = Tk()
 my_window = CommanderWindow(root )
 root.geometry("300x200")
+print(dir(Label))
+t1 = threading.Thread(target=my_window.foo)
+t1.start()
 root.mainloop() # blocking
 
 print("Goodbye...")
