@@ -23,6 +23,11 @@ def printit():
 
 btn = Button(top, text="delete", command=printit)
 
+
+def dbl(item):
+    print(item)
+listbox.bind('<Double-Button>', dbl)
+
 lbl.pack()
 
 listbox.pack()
