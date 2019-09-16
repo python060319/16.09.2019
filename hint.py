@@ -8,8 +8,7 @@ class CommanderWindow:
 
         self.label_text = StringVar()
         self.label_text.set("Total Size: 3.4M")
-        self.label = Label(master,
-                           textvariable = self.label_text)
+        self.label = Label(master, textvariable = self.label_text)
         self.listbox1 = Listbox(master)
         self.listbox1.insert(1, "[..]")
         self.listbox1.insert(2, "python")
