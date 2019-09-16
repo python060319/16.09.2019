@@ -25,7 +25,7 @@ btn = Button(top, text="delete", command=printit)
 
 
 def dbl(item):
-    print(item)
+    print(listbox.curselection()[0])
 listbox.bind('<Double-Button>', dbl)
 
 lbl.pack()
